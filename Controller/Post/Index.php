@@ -1,0 +1,26 @@
+<?php
+
+namespace AHT\CRUD\Controller\Post;
+
+class Index extends \Magento\Framework\App\Action\Action
+{
+    protected $pageFactory;
+    protected $postFactory;
+    protected $collectionFactory;
+
+    public function __construct(
+        \Magento\Framework\App\Action\Context $context,
+        \Magento\Framework\View\Result\PageFactory $pageFactory,
+        \AHT\CRUD\Model\PostFactory $postFactory
+    )
+    {
+        $this->pageFactory = $pageFactory;
+        return parent::__construct($context);
+    }
+
+    public function execute()
+    {
+        return $this->pageFactory->create();
+    }
+}
+?>

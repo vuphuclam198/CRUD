@@ -1,0 +1,25 @@
+
+<a href="<?= $this->getUrl('crud/post/add'); ?>" style="background:blue; color:#fff">Create</a>
+<table style="border:1px solid #000">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Content</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    <?php foreach($block->getAll() as $value): ?>
+        <tr>
+            <td><?= $value->getId() ?></td>
+            <td><?= $value->getName() ?></td>
+            <td><?= $value->getContent() ?></td>
+            <td><?= $value->getStatus() ?></td>
+            <td>
+                <span><a href="<?= $block->getUrl('crud/post/edit').'id/'.$value->getId() ?>" style="background:yellow;color:#fff">Edit</a></span> 
+                <span><a href="<?= $block->getUrl('crud/post/delete').'?id='.$value->getId() ?>" style="background:red; color:#fff">Delete</a></span>
+            </td>
+        </tr>
+    <?php endforeach ;?>
+
+</table>
