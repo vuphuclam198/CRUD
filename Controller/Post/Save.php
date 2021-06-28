@@ -8,7 +8,9 @@ class Save extends \Magento\Framework\App\Action\Action
     protected $_pageFactory;
     protected $_postFactory;
     protected $request;
-
+    protected $cachePool;
+    protected $cacheTypeList;
+ 
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $pageFactory,
